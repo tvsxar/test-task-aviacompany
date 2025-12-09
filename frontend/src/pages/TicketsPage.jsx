@@ -1,27 +1,18 @@
-import TicketsList from "../components/TicketsList";
-import TicketsFilter from "../components/TicketsFilter";
-import TicketsSortButtons from "../components/TicketsSortButtons";
+import { TicketsList, TicketsFilter, TicketsSortButtons } from '../components'
 import { Container, Box } from "@mui/material";
+import { containerStyles, leftBoxStyles, rightBoxStyles } from '../styled/pages/TicketsPage/TicketsPageStyles';
 
 function TicketsPage() {
+  // there will be logic
   return (
-    <Container maxWidth="md" sx={{ mt: 4 }}>
+    <Container maxWidth="md" sx={containerStyles}>
       <Box
-        sx={{
-          display: "flex",
-          gap: 2,
-          width: "100%",
-        }}
+        sx={leftBoxStyles}
       >
         <TicketsFilter />
 
         <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            flex: 1,
-          }}
+          sx={rightBoxStyles}
         >
           <TicketsSortButtons />
           <TicketsList />

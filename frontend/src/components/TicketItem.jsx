@@ -1,102 +1,88 @@
 import { Paper, Typography, Box } from "@mui/material";
+import {
+  ticketPaper,
+  ticketHeaderBox,
+  ticketRowBox,
+  columnBox,
+  priceText,
+  carrierText,
+  boldText,
+  grayText,
+} from "../styled/components/TicketItem/TicketItemStyles";
 
-const styles = {
-  fontWeight: 600
-}
+const TicketItem = () => (
+  <Paper sx={ticketPaper}>
+    <Box sx={ticketHeaderBox}>
+      <Typography sx={priceText} variant="h6">
+        12 000
+      </Typography>
+      <Typography sx={carrierText} variant="subtitle1">
+        S7 AirLines
+      </Typography>
+    </Box>
 
-const grayStyles = {
-  ...styles,
-  color: '#9a9a9aff'
-}
-
-function TicketItem() {
-  return (
-    <Paper sx={{ p: 2, mb: 2, width: "100%" }}>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          mb: 3,
-        }}
-      >
-        <Typography sx={{ fontWeight: 'bold', fontSize: '1.75rem', color: '#1e84ebff'}} variant="h6">12 000</Typography> 
-        <Typography sx={{ fontWeight: 600, color: 'gray', fontSize: '1.25rem'}} variant="subtitle1">S7 AirLines</Typography>
-      </Box>
-
-      <Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: 'space-between',
-            alignItems: "flex-start",
-            mb: 1,
-          }}
-        >
-
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Box>
-              <Typography variant="body2" sx={grayStyles}>
-                WAW → HKT
-              </Typography>
-              <Typography variant="body2" sx={styles}>
-                10:45 – 08:00
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="body2" sx={grayStyles}>
-                HKT → WAW
-              </Typography>
-              <Typography variant="body2" sx={styles}>
-                11:20 – 00:50
-              </Typography>
-            </Box>
+    <Box>
+      <Box sx={ticketRowBox}>
+        <Box sx={columnBox}>
+          <Box>
+            <Typography variant="body2" sx={grayText}>
+              WAW → HKT
+            </Typography>
+            <Typography variant="body2" sx={boldText}>
+              10:45 – 08:00
+            </Typography>
           </Box>
 
-
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Box>
-              <Typography variant="body2" sx={grayStyles}>
-                В ПУТИ
-              </Typography>
-              <Typography variant="body2" sx={styles}>
-                21ч 15м
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="body2" sx={grayStyles}>
-                В ПУТИ
-              </Typography>
-              <Typography variant="body2" sx={styles}>
-                13ч 30м
-              </Typography>
-            </Box>
+          <Box>
+            <Typography variant="body2" sx={grayText}>
+              HKT → WAW
+            </Typography>
+            <Typography variant="body2" sx={boldText}>
+              11:20 – 00:50
+            </Typography>
           </Box>
+        </Box>
 
+        <Box sx={columnBox}>
+          <Box>
+            <Typography variant="body2" sx={grayText}>
+              В ПУТИ
+            </Typography>
+            <Typography variant="body2" sx={boldText}>
+              21ч 15м
+            </Typography>
+          </Box>
+          <Box>
+            <Typography variant="body2" sx={grayText}>
+              В ПУТИ
+            </Typography>
+            <Typography variant="body2" sx={boldText}>
+              13ч 30м
+            </Typography>
+          </Box>
+        </Box>
 
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Box>
-              <Typography variant="body2" sx={grayStyles}>
-                2 ПЕРЕСАДКИ
-              </Typography>
-              <Typography variant="body2" sx={styles}>
-                HKG, JNB
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="body2" sx={grayStyles}>
-                1 ПЕРЕСАДКА
-              </Typography>
-              <Typography variant="body2" sx={styles}>
-                HKG
-              </Typography>
-            </Box>
+        <Box sx={columnBox}>
+          <Box>
+            <Typography variant="body2" sx={grayText}>
+              2 ПЕРЕСАДКИ
+            </Typography>
+            <Typography variant="body2" sx={boldText}>
+              HKG, JNB
+            </Typography>
+          </Box>
+          <Box>
+            <Typography variant="body2" sx={grayText}>
+              1 ПЕРЕСАДКА
+            </Typography>
+            <Typography variant="body2" sx={boldText}>
+              HKG
+            </Typography>
           </Box>
         </Box>
       </Box>
-    </Paper>
-  );
-}
+    </Box>
+  </Paper>
+);
 
 export default TicketItem;

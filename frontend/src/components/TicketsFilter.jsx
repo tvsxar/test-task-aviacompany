@@ -5,70 +5,37 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
+import {
+  ticketFilterPaper,
+  titleText,
+  formGroup,
+  formControlLabel,
+  checkbox,
+} from "../styled/components/TicketsFilter/TicketsFilterStyles";
 
-const checkboxStyles = {
-  color: "#1e84ebff",
-  "&.Mui-checked": {
-    color: "#1e84ebff",
-  },
-};
+const TicketsFilter = () => (
+  <Paper sx={ticketFilterPaper}>
+    <Typography variant="h6" sx={titleText}>
+      Количество пересадок
+    </Typography>
 
-const formControlStyles = {
-  width: '100%',
-  borderRadius: 1,
-  "&:hover": {
-    bgcolor: "#e6f0ff",
-  },
-};
-
-function TicketsFilter() {
-  return (
-    <Paper
-      sx={{
-        p: 2,
-        borderRadius: 1,
-        mb: 2,
-        bgcolor: "white",
-        maxHeight: "17rem",
-        minWidth: '15rem'
-      }}
-    >
-      <Typography
-        variant="h6"
-        sx={{ fontSize: "1rem", mb: 1, color: "#5e5e5eff" }}
-      >
-        Количество пересадок
-      </Typography>
-
-      <FormGroup sx={{ width: '100%' }}>
+    <FormGroup sx={formGroup}>
+      {[
+        "Все",
+        "Без пересадок",
+        "1 пересадка",
+        "2 пересадки",
+        "3 пересадки",
+      ].map((item, index) => (
         <FormControlLabel
-          control={<Checkbox sx={checkboxStyles} />}
-          label="Все"
-          sx={formControlStyles}
+          key={index}
+          control={<Checkbox sx={checkbox} />}
+          label={item}
+          sx={formControlLabel}
         />
-        <FormControlLabel
-          control={<Checkbox sx={checkboxStyles} />}
-          label="Без пересадок"
-          sx={formControlStyles}
-        />
-        <FormControlLabel
-          control={<Checkbox sx={checkboxStyles} />}
-          label="1 пересадка"
-          sx={formControlStyles}
-        />
-        <FormControlLabel
-          control={<Checkbox sx={checkboxStyles} />}
-          label="2 пересадки"
-          sx={formControlStyles}
-        />
-        <FormControlLabel
-          control={<Checkbox sx={checkboxStyles} />}
-          label="3 пересадки"
-          sx={formControlStyles}
-        />
-      </FormGroup>
-    </Paper>
-  );
-}
+      ))}
+    </FormGroup>
+  </Paper>
+);
 
 export default TicketsFilter;

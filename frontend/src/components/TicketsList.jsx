@@ -1,16 +1,14 @@
-import { Box } from '@mui/material';
-import TicketItem from './TicketItem';
+import { Box } from "@mui/material";
+import { TicketItem } from "./";
 
-function TicketsList() {
-  return (
-    <Box>
-        <TicketItem />
-        <TicketItem />
-        <TicketItem />
-        <TicketItem />
-        <TicketItem />
-    </Box>
-  )
-}
+const TicketsList = () => (
+  <Box>
+    <TicketItem />
+    <TicketItem />
+    <TicketItem />
+    <TicketItem />
+    <TicketItem />
+  </Box>
+);
 
-export default TicketsList
+export default TicketsList;
