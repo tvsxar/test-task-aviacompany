@@ -8,7 +8,7 @@ import {
   FlightColumn,
   ChipWrapper,
   FlightColumnRight,
-} from "../styled/components/FlightInfo/FlightInfoStyles";
+} from "../styled/components/FlightInfoStyles";
 import { Box, Paper, Typography, Divider, Chip } from "@mui/material";
 
 const FlightInfo = () => (

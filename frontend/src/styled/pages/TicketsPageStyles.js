@@ -1,4 +1,4 @@
-import { media } from "../../globals";
+import { media } from "../globals";
 
 export const containerStyles = {
   mt: 4,

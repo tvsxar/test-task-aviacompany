@@ -4,7 +4,7 @@ import {
   titlePrice,
   airlineName,
   ButtonStyle,
-} from "../styled/components/TicketInfoHeader/TicketInfoHeaderStyles";
+} from "../styled/components/TicketInfoHeaderStyles";
 import { Box, Paper, Typography, Button } from "@mui/material";
 
 const TicketInfoHeader = () => (

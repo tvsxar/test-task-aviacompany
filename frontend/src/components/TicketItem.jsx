@@ -8,7 +8,7 @@ import {
   carrierText,
   boldText,
   grayText,
-} from "../styled/components/TicketItem/TicketItemStyles";
+} from "../styled/components/TicketItemStyles";
 
 const TicketItem = () => (
   <Paper sx={ticketPaper}>

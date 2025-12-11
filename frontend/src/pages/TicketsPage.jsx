@@ -1,6 +1,6 @@
 import { TicketsList, TicketsFilter, TicketsSortButtons } from '../components'
 import { Container, Box } from "@mui/material";
-import { containerStyles, leftBoxStyles, rightBoxStyles } from '../styled/pages/TicketsPage/TicketsPageStyles';
+import { containerStyles, leftBoxStyles, rightBoxStyles } from '../styled/pages/TicketsPageStyles';
 
 function TicketsPage() {
   // there will be logic

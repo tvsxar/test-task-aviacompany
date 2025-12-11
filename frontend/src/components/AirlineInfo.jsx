@@ -2,7 +2,7 @@ import {
   AirlinePaperStyle,
   AirLineGrayText,
   AirlineInfoText,
-} from "../styled/components/AirlineInfo/AirlineInfoStyles";
+} from "../styled/components/AirlineInfoStyles";
 import { Box, Paper, Typography } from "@mui/material";
 
 const AirlineInfo = () => (

@@ -4,7 +4,7 @@ import { TicketInfoHeader, FlightInfo, AirlineInfo } from "../components";
 import {
   ContainerStyle,
   BackButtonStyle,
-} from "../styled/pages/TicketInfoPage/TicketInfoPageStyles";
+} from "../styled/pages/TicketInfoPageStyles";
 
 function TicketInfoPage() {
   const navigate = useNavigate();
