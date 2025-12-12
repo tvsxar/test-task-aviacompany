@@ -8,18 +8,46 @@ import {
   loadingTextStyles,
 } from "../styled/pages/TicketsPageStyles";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function TicketsPage() {
   const dispatch = useDispatch();
-
   const { tickets, loading } = useSelector((state) => state.tickets);
+  const [displayedTickets, setDisplayedTickets] = useState([]);
+  const [filters, setFilters] = useState({
+    stops: [],
+    sort: "cheapest",
+  });
 
   useEffect(() => {
     if (!tickets || tickets.length === 0) {
       dispatch({ type: "tickets/fetchTickets" });
     }
   }, [dispatch]);
+
+  useEffect(() => {
+    const sortedTickets =
+      filters.sort === "cheapest"
+        ? [...tickets].sort((a, b) => a.price - b.price)
+        : [...tickets].sort(
+            (a, b) =>
+              a.segments[0].duration +
+              a.segments[1].duration -
+              (b.segments[0].duration + b.segments[1].duration)
+          );
+
+    const filteredTickets = sortedTickets.filter((ticket) =>
+      !filters.stops.length
+        ? true
+        : filters.stops.some(
+            (stop) =>
+              ticket.segments[0].stops.length === stop &&
+              ticket.segments[1].stops.length === stop
+          )
+    );
+
+    setDisplayedTickets(filteredTickets);
+  }, [tickets, filters]);
 
   if (loading) {
     return (
@@ -34,11 +62,12 @@ function TicketsPage() {
   return (
     <Container maxWidth="md" sx={containerStyles}>
       <Box sx={leftBoxStyles}>
-        <TicketsFilter />
+        <TicketsFilter filters={filters} setFilters={setFilters} />
 
         <Box sx={rightBoxStyles}>
-          <TicketsSortButtons />
-          <TicketsList tickets={tickets} />
+          <TicketsSortButtons filters={filters} setFilters={setFilters} />
+
+          <TicketsList tickets={displayedTickets} />
         </Box>
       </Box>
     </Container>

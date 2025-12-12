@@ -4,14 +4,8 @@ export const ticketFilterPaper = {
   p: 2,
   borderRadius: 1,
   bgcolor: "white",
-  maxHeight: "17rem",
+  maxHeight: "14.5rem",
   minWidth: "15rem",
-  [media.xs]: {
-    maxHeight: '16.25rem'
-  },
-  [media.md]: {
-    maxHeight: '17rem'
-  },
 };
 
 export const titleText = {
