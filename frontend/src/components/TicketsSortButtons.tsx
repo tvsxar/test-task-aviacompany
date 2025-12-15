@@ -3,11 +3,7 @@ import {
   toggleButtonGroupStyles,
   toggleButtonStyles,
 } from "../styled/components/TicketSortButtons";
-
-type Filters = {
-  stops: number[],
-  sort: "cheapest" | "fastest"
-}
+import { Filters } from '../types/types';
 
 interface TicketsFilterProps {
   filters: Filters,

@@ -1,6 +1,7 @@
 import { Paper, Typography, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 import { ticketFilterPaper, titleText, formGroup, formControlLabel, checkbox } from "../styled/components/TicketsFilterStyles";
 import { Formik, Form } from "formik";
+import { Filters } from '../types/types';
 
 const stopsOptions = [
   { label: "Прямой рейс", value: 0 },
@@ -8,11 +9,6 @@ const stopsOptions = [
   { label: "2 пересадки", value: 2 },
   { label: "3 пересадки", value: 3 },
 ];
-
-type Filters = {
-  stops: number[],
-  sort: "cheapest" | "fastest"
-}
 
 interface TicketsFilterProps {
   filters: Filters,

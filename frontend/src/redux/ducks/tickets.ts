@@ -1,19 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { fetchSearchId, fetchTickets } from "../../api/ticketsApi";
-
-interface Ticket {
-  id: string;
-  carrier: string;
-  price: number;
-  segments: {
-    date: string;
-    destination: string;
-    duration: number;
-    origin: string;
-    stops: string[];
-  }[];
-}
+import { Ticket } from '../../types/types';
 
 const initialState = {
   tickets: [],

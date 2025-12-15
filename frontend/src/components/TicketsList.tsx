@@ -1,20 +1,7 @@
 import { Box } from "@mui/material";
 import TicketItem from "./TicketItem";
 import { Link } from "react-router-dom";
-
-interface Ticket {
-  id: string,
-  carrier: string,
-  price: number,
-  segments: {
-    date: string,
-    destination: string,
-    duration: number,
-    origin: string,
-    stops: string[]
-  }[]
-}
-
+import { Ticket } from '../types/types';
 interface TicketsListProps {
   tickets: Ticket[]
 }

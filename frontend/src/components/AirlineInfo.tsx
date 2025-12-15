@@ -4,19 +4,7 @@ import {
   AirlineInfoText,
 } from "../styled/components/AirlineInfoStyles";
 import { Paper, Typography } from "@mui/material";
-
-interface Ticket {
-  id: string,
-  carrier: string,
-  price: number,
-  segments: {
-    date: string,
-    destination: string,
-    duration: number,
-    origin: string,
-    stops: string[]
-  }[]
-}
+import { Ticket } from '../types/types';
 
 interface AirlineInfoProps {
   ticket: Ticket

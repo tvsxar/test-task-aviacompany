@@ -9,19 +9,7 @@ import {
   boldText,
   grayText,
 } from "../styled/components/TicketItemStyles";
-
-interface Ticket {
-  id: string,
-  carrier: string,
-  price: number,
-  segments: {
-    date: string,
-    destination: string,
-    duration: number,
-    origin: string,
-    stops: string[]
-  }[]
-}
+import { Ticket } from '../types/types';
 
 interface TicketItemProps {
   ticket: Ticket

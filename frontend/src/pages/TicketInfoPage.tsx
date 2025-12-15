@@ -8,19 +8,7 @@ import {
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { RootState } from "../redux/store";
-
-interface Ticket {
-  id: string,
-  carrier: string,
-  price: number,
-  segments: {
-    date: string,
-    destination: string,
-    duration: number,
-    origin: string,
-    stops: string[]
-  }[]
-}
+import { Ticket } from '../types/types';
 
 function TicketInfoPage() {
   const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);

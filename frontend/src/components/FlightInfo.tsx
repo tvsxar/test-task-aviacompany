@@ -12,19 +12,7 @@ import {
   loadingTextStyles,
 } from "../styled/components/FlightInfoStyles";
 import { Box, Paper, Typography, Divider, Chip } from "@mui/material";
-
-interface Ticket {
-  id: string,
-  carrier: string,
-  price: number,
-  segments: {
-    date: string,
-    destination: string,
-    duration: number,
-    origin: string,
-    stops: string[]
-  }[]
-}
+import { Ticket } from '../types/types';
 
 interface FlightInfoProps {
   ticket: Ticket

@@ -10,24 +10,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { RootState, AppDispatch } from '../redux/store';
-
-interface Ticket {
-  id: string,
-  carrier: string,
-  price: number,
-  segments: {
-    date: string,
-    destination: string,
-    duration: number,
-    origin: string,
-    stops: string[]
-  }[]
-}
-
-interface Filters {
-  stops: number[],
-  sort: "cheapest" | "fastest"
-}
+import { Ticket, Filters } from '../types/types';
 
 function TicketsPage() {
   const dispatch = useDispatch<AppDispatch>();

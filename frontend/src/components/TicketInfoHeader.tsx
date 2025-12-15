@@ -6,19 +6,7 @@ import {
   ButtonStyle,
 } from "../styled/components/TicketInfoHeaderStyles";
 import { Box, Paper, Typography, Button } from "@mui/material";
-
-interface Ticket {
-  id: string,
-  carrier: string,
-  price: number,
-  segments: {
-    date: string,
-    destination: string,
-    duration: number,
-    origin: string,
-    stops: string[]
-  }[]
-}
+import { Ticket } from '../types/types';
 
 interface TicketInfoHeaderProps {
   ticket: Ticket
