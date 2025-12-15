@@ -1,7 +1,30 @@
+import { createSlice } from "@reduxjs/toolkit";
 import { call, put, takeLatest } from "redux-saga/effects";
-import { setTickets, setLoading, setError } from "./ticketsSlice";
-import { fetchSearchId, fetchTickets } from "./mockTicketsApi";
+import { fetchSearchId, fetchTickets } from "../../api/ticketsApi";
 
+const initialState = {
+  tickets: [],
+  loading: false,
+  error: null,
+};
+
+const ticketsSlice = createSlice({
+  name: "tickets",
+  initialState,
+  reducers: {
+    setTickets(state, action) {
+      state.tickets = action.payload;
+    },
+    setLoading(state, action) {
+      state.loading = action.payload;
+    },
+    setError(state, action) {
+      state.error = action.payload;
+    },
+  },
+});
+
+// Saga
 function* fetchTicketsWorker(action) {
   try {
     yield put(setLoading(true));
@@ -33,3 +56,7 @@ export function* ticketsWatcher() {
   console.log("ticketsWatcher STARTED");
   yield takeLatest("tickets/fetchTickets", fetchTicketsWorker);
 }
+
+export const { setTickets, setLoading, setError } = ticketsSlice.actions;
+
+export default ticketsSlice.reducer;

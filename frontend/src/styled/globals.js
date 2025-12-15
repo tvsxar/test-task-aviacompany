@@ -3,6 +3,7 @@ export const colors = {
   lightGray: "#9a9a9aff",
   darkGray: "#5e5e5eff",
   bgHover: "#e6f0ff",
+  bgLoading: "#f5fdff"
 };
 
 export const breakpoints = {

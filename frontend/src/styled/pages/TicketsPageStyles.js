@@ -1,4 +1,4 @@
-import { media } from "../globals";
+import { media, colors } from "../globals";
 
 export const containerStyles = {
   mt: 4,
@@ -26,11 +26,11 @@ export const loadingBoxStyles = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  bgcolor: "#f5fdff",
+  bgcolor: colors.bgLoading,
   px: 2,
 };
 
 export const loadingTextStyles = {
   fontWeight: 600,
-  color: "grey.600",
+  color: colors.lightGray,
 };
